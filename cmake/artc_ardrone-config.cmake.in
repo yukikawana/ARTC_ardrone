@@ -1,0 +1,54 @@
+# artc_ardrone CMake config file
+#
+# This file sets the following variables:
+# artc_ardrone_FOUND - Always TRUE.
+# artc_ardrone_INCLUDE_DIRS - Directories containing the artc_ardrone include files.
+# artc_ardrone_IDL_DIRS - Directories containing the artc_ardrone IDL files.
+# artc_ardrone_LIBRARIES - Libraries needed to use artc_ardrone.
+# artc_ardrone_DEFINITIONS - Compiler flags for artc_ardrone.
+# artc_ardrone_VERSION - The version of artc_ardrone found.
+# artc_ardrone_VERSION_MAJOR - The major version of artc_ardrone found.
+# artc_ardrone_VERSION_MINOR - The minor version of artc_ardrone found.
+# artc_ardrone_VERSION_REVISION - The revision version of artc_ardrone found.
+# artc_ardrone_VERSION_CANDIDATE - The candidate version of artc_ardrone found.
+
+message(STATUS "Found artc_ardrone-@PROJECT_VERSION@")
+set(artc_ardrone_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(artc_ardrone_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(artc_ardrone_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(artc_ardrone_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(artc_ardrone_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(artc_ardrone_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(artc_ardrone_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(artc_ardrone_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(artc_ardrone_VERSION @PROJECT_VERSION@)
+set(artc_ardrone_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(artc_ardrone_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(artc_ardrone_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(artc_ardrone_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

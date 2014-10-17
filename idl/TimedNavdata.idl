@@ -1,0 +1,22 @@
+#include "ExtendedDataTypes.idl"
+
+module naistrobotics {
+struct TimedNavdata {
+  RTC::Time tm;
+  long imgwidth;
+  long imgheight;
+  long imgSize;
+  long imgType;
+  RTC::TimedOctetSeq imgData;
+  double roll;
+  double pitch;
+  double yaw;
+  double altitude;
+  double vx;
+  double vy;
+  double vz;
+  short battery;
+  boolean onground;
+  RTC::TimedDoubleSeq additional;
+}; 
+};

@@ -1,0 +1,13 @@
+#include "ExtendedDataTypes.idl"
+
+module naistrobotics {
+struct TimedControldata {
+  RTC::Time tm;
+  double yaw;
+  double vx;
+  double vy;
+  double vz;
+  boolean onground;
+}; 
+};
+ 
