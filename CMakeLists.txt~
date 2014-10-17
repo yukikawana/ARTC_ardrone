@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 project(artc_ardrone)
-set(CMAKE_INSTALL_PREFIX "$ENV{HOME}/Downloads/ardrone/usr/arm-linux-gnueabi")
+set(CMAKE_INSTALL_PREFIX "$ENV{HOME}/ardrone/usr/arm-linux-gnueabi")
 SET(CMAKE_C_COMPILER   /usr/bin/arm-linux-gnueabi-gcc)
 SET(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabi-g++)
 SET(CMAKE_FIND_ROOT_PATH /usr/arm-linux-gnueabi)
