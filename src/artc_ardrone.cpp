@@ -8,6 +8,7 @@
  */
 
 #include "artc_ardrone.h"
+#include <math.h>
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -128,9 +129,9 @@ if(m_controldataIn.isNew()){
         double pitch = ardrone.getPitch();
         double yaw   = ardrone.getYaw();
 
-        std::cout << "ardrone.roll  = " << roll   << " [deg]" << std::endl;
-        std::cout << "ardrone.pitch = " << pitch << " [deg]" << std::endl;
-        std::cout << "ardrone.yaw   = " << yaw   << " [deg]" << std::endl;
+        std::cout << "ardrone.roll  = " << roll   << " [RAD]" << std::endl;
+        std::cout << "ardrone.pitch = " << pitch << " [RAD]" << std::endl;
+        std::cout << "ardrone.yaw   = " << yaw   << " [RAD]" << std::endl;
         
 
         // Altitude

@@ -8,6 +8,7 @@
  */
 
 #include "artc_ardrone.h"
+#include <math.h>
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -156,7 +157,7 @@ if(m_controldataIn.isNew()){
         m_navdata.vz=vz;
         m_navdata.battery=battery;
         if(battery<5) ardrone.landing();
-        m_navdata.onground=true;
+        m_navdata.onground=ardrone.onGround();
         m_navdata.imgwidth=image.cols;
         m_navdata.imgheight=image.rows;
 	int len=image.channels()*image.cols*image.rows;
