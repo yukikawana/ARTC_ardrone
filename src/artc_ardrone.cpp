@@ -100,7 +100,7 @@ RTC::ReturnCode_t artc_ardrone::onActivated(RTC::UniqueId ec_id)
 flying=false;
  if (!ardrone.open()) {
         std::cout << "Failed to initialize." << std::endl;
-        //return -1;
+        return RTC::RTC_ERROR;
     }
   return RTC::RTC_OK;
 }
