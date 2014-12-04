@@ -1,3 +1,4 @@
+This software is based on CV Drone (https://github.com/puku0x/cvdrone).
 
 INTRODUCTION
   ARTC_ardrone is free software; you can redistribute it and/or
